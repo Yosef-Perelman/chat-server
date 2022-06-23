@@ -10,6 +10,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSignalR();
 
 builder.Services.AddTransient<ContactService>();
+builder.Services.AddTransient<FireBaseService>();
+
 builder.Services.AddControllers();
 
 builder.Services.AddDbContext<Chat_AppContext>(options =>
@@ -29,6 +31,7 @@ builder.Services.AddCors(options =>
 });
 
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -5,21 +5,26 @@ namespace Chat_App.services
     public class ContactService : IContactService
     {
         private static List<Contact> contacts = new List<Contact>() {
-                        new Contact { Id = "Yosef", Name = "yossi", UserName = "Ariel", Messages = new List<Message>(){
+                        new Contact { Id = "yosef", Name = "yossi", UserName = "Ariel", Messages = new List<Message>(){
                             new Message { Id = 0, Content = "hello darkness", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = false },
-                            new Message { Id = 1, Content = "my old friend", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }}},
+                            new Message { Id = 1, Content = "my old friend", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }}, 
+                            Last = "my old friend" },
                         new Contact { Id = "ariel", Name = "ari" , UserName = "Ariel", Messages = new List<Message>(){
-                            new Message { Id = 0, Content = "how are you", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true },
-                            new Message { Id = 1, Content = "good", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }} },
+                            new Message { Id = 0, Content = "how are you", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = false },
+                            new Message { Id = 1, Content = "good", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }},
+                        Last = "good" },
                         new Contact { Id = "dad", Name = "dad" , UserName = "Ariel", Messages = new List<Message>(){
-                            new Message { Id = 0, Content = "hi", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true },
-                            new Message { Id = 1, Content = "thanks", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }} },
+                            new Message { Id = 0, Content = "hi", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = false },
+                            new Message { Id = 1, Content = "thanks", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }},
+                        Last = "thanks" },
                         new Contact { Id = "mom", Name = "mom" , UserName = "Ariel", Messages = new List<Message>(){
-                            new Message { Id = 0, Content = "maccabi", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true },
-                            new Message { Id = 1, Content = "haifa", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }} },
+                            new Message { Id = 0, Content = "maccabi", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = false },
+                            new Message { Id = 1, Content = "haifa!", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }},
+                        Last = "haifa!" },
                         new Contact { Id = "bob", Name = "bob" , UserName = "Ariel", Messages = new List<Message>(){
-                            new Message { Id = 0, Content = "yes", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true },
-                            new Message { Id = 1, Content = "no", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }} }
+                            new Message { Id = 0, Content = "yes!", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = false },
+                            new Message { Id = 1, Content = "no!", Created = DateTime.Now.ToString("HH:mm:ss"), Sent = true }},
+                        Last = "no!"}
                         };
 
         public List<Contact> GetAll()

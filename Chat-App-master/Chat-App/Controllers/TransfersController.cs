@@ -9,10 +9,12 @@ namespace Chat_App.Controllers
     public class TransferController : Controller
     {
         private readonly IContactService _service;
+        private readonly Chat_App.services.FireBaseService _firebase;
 
-        public TransferController(ContactService service)
+        public TransferController(ContactService service, FireBaseService fireBaseService)
         {
             _service = service;
+            _firebase = fireBaseService;
         }
 
         [HttpPost]
@@ -33,7 +35,13 @@ namespace Chat_App.Controllers
             if (ModelState.IsValid)
             {
                 int id2 = _service.CreateMessageFrom(transfer.To, transfer.From, transfer.Content);
+                if (_firebase.getToken(transfer.To) != null)
+                {
+                    _firebase.SendNotification(_firebase.getToken(transfer.To),
+                        "New Message", transfer.From + " says: " + transfer.Content);
+                }
                 return Created(String.Format("/api/contact/{0}/messages/{0}", transfer.From, id2), _service.GetMessage(transfer.From, id2));
+
             }
             return BadRequest();
         }

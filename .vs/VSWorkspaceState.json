@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Chat-App-master",
+    "\\Chat-App-master\\Chat-App",
+    "\\Chat-App-master\\Chat-App\\Controllers",
+    "\\Chat-App-master\\Chat-App\\services"
   ],
-  "SelectedNode": "\\C:\\Users\\User\\Source\\Repos\\chat-server",
+  "SelectedNode": "\\Chat-App-master\\Chat-App\\services\\FireBaseService.cs",
   "PreviewInSolutionExplorer": false
 }
